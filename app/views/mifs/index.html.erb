@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mifs</h1>
+<p><%= Mif.test %></p>
+<p><%= Mif.find_mif %></p>
+<p><%= Mif.find_customer_via_brn %></p>
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mifs.each do |mif| %>
+      <tr>
+        <td><%= link_to 'Show', mif %></td>
+        <td><%= link_to 'Edit', edit_mif_path(mif) %></td>
+        <td><%= link_to 'Destroy', mif, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mif', new_mif_path %>
